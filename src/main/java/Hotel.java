@@ -42,13 +42,15 @@ public class Hotel {
     public void bookAndCheckIn(ArrayList<Guest> guests, Bedroom bedroom, int nights) {
         double totalCash = 0;
         for(Guest guest: guests){
-            totalCash = guest.getCash();
-            System.out.println(totalCash);
+            totalCash += guest.getCash();
         }
         if(totalCash >= bedroom.getNightlyRate() * nights) {
             checkIn(guests, bedroom);
             Booking booking = bookRoom(bedroom, nights);
-            guests.get(0).reduceCash(booking.getTotalBill());
+            double bill = booking.getTotalBill();
+            for (Guest guest : guests){
+                bill = guest.reduceCash(bill);
+            }
         }
     }
 }

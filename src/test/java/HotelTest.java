@@ -92,4 +92,17 @@ public class HotelTest {
         assertEquals(0, hotel.getBookings().size());
         assertEquals(300, guest1.getCash(), 0);
     }
+
+    @Test
+    public void ifFirstGuestDoesNotHaveEnoughMoneySecondWillPayRest(){
+        Guest guest2 = new Guest("Ophelia", 100);
+        guests.add(guest2);
+        hotel.bookAndCheckIn(guests, bedroom1, 7);
+        Booking booking = hotel.getBookings().get(0);
+        assertEquals(2, bedroom1.getGuestCount());
+        assertEquals(bedroom1, booking.getRoom());
+        assertEquals(7, booking.getNights());
+        assertEquals(0, guest1.getCash(), 0);
+        assertEquals(50, guest2.getCash(), 0);
+    }
 }
