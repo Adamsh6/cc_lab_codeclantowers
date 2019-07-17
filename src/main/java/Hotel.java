@@ -11,7 +11,7 @@ public class Hotel {
 
     public void checkIn(ArrayList<Guest> guests, Bedroom wantedBedroom) {
         for(Bedroom bedroom : bedrooms){
-            if (bedroom == wantedBedroom){
+            if (bedroom == wantedBedroom && bedroom.getGuestCount() == 0){
                 bedroom.addGuests(guests);
             }
         }

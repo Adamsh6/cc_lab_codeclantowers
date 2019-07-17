@@ -34,4 +34,12 @@ public class ConferenceRoomTest {
         conferenceRoom1.addGuest(guest1);
         assertEquals(1, conferenceRoom1.getGuestCount());
     }
+
+    @Test
+    public void cannotAddGuestIfAtCapacity(){
+        ConferenceRoom conferenceRoom2 = new ConferenceRoom("Turing", 1);
+        conferenceRoom2.addGuest(guest1);
+        conferenceRoom2.addGuest(guest1);
+        assertEquals(1, conferenceRoom2.getGuestCount());
+    }
 }

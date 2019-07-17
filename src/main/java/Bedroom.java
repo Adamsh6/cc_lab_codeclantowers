@@ -37,7 +37,9 @@ public class Bedroom {
     }
 
     public void addGuests(ArrayList<Guest> guests) {
-        this.guests.addAll(guests);
+        if(guests.size() <= capacity) {
+            this.guests.addAll(guests);
+        }
     }
 
     public void removeGuests() {

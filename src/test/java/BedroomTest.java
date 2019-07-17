@@ -49,6 +49,13 @@ public class BedroomTest {
     }
 
     @Test
+    public void cannotAddGuestsIfMoreThanCapacity(){
+        Bedroom bedroom2 = new Bedroom(4, 1, "single", 30.45);
+        bedroom2.addGuests(guests);
+        assertEquals(0, bedroom2.getGuestCount());
+    }
+
+    @Test
     public void canRemoveGuests(){
         bedroom1.removeGuests();
         assertEquals(0, bedroom1.getGuestCount());
