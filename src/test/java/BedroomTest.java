@@ -1,17 +1,25 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 public class BedroomTest {
 
     Bedroom bedroom1;
     Guest guest1;
+    Guest guest2;
+    ArrayList<Guest> guests;
 
     @Before
     public void setUp(){
         bedroom1 = new Bedroom(1, 2, "single");
         guest1 = new Guest("Reginald");
+        guest2 = new Guest("Ophelia");
+        guests = new ArrayList<Guest>();
+        guests.add(guest1);
+        guests.add(guest2);
     }
 
     @Test
@@ -35,8 +43,14 @@ public class BedroomTest {
     }
 
     @Test
-    public void canAddGuest(){
-        bedroom1.addGuest(guest1);
-        assertEquals(1, bedroom1.getGuestCount());
+    public void canAddGuests(){
+        bedroom1.addGuests(guests);
+        assertEquals(2, bedroom1.getGuestCount());
+    }
+
+    @Test
+    public void canRemoveGuests(){
+        bedroom1.removeGuests();
+        assertEquals(0, bedroom1.getGuestCount());
     }
 }

@@ -30,7 +30,11 @@ public class Bedroom {
         return this.guests.size();
     }
 
-    public void addGuest(Guest guest) {
-        this.guests.add(guest);
+    public void addGuests(ArrayList<Guest> guests) {
+        this.guests.addAll(guests);
+    }
+
+    public void removeGuests() {
+        this.guests.clear();
     }
 }

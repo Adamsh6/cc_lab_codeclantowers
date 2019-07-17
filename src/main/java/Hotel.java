@@ -8,4 +8,12 @@ public class Hotel {
         this.bedrooms = bedrooms;
         this.conferenceRooms = conferenceRooms;
     }
+
+    public void checkIn(ArrayList<Guest> guests, Bedroom wantedBedroom) {
+        for(Bedroom bedroom : bedrooms){
+            if (bedroom == wantedBedroom){
+                bedroom.addGuests(guests);
+            }
+        }
+    }
 }
