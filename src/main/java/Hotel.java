@@ -16,4 +16,19 @@ public class Hotel {
             }
         }
     }
+
+    public Booking bookRoom(Bedroom bedroom, int nights) {
+        Booking booking = new Booking(bedroom, nights);
+        return booking;
+    }
+
+    public ArrayList<Bedroom> getEmptyBedrooms() {
+        ArrayList<Bedroom> emptyRooms = new ArrayList<Bedroom>();
+        for(Bedroom bedroom : bedrooms){
+            if(bedroom.getGuestCount() == 0){
+                emptyRooms.add(bedroom);
+            }
+        }
+        return emptyRooms;
+    }
 }

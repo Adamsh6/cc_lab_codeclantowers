@@ -14,7 +14,7 @@ public class BedroomTest {
 
     @Before
     public void setUp(){
-        bedroom1 = new Bedroom(1, 2, "single");
+        bedroom1 = new Bedroom(1, 2, "single", 50.50);
         guest1 = new Guest("Reginald");
         guest2 = new Guest("Ophelia");
         guests = new ArrayList<Guest>();
@@ -52,5 +52,10 @@ public class BedroomTest {
     public void canRemoveGuests(){
         bedroom1.removeGuests();
         assertEquals(0, bedroom1.getGuestCount());
+    }
+
+    @Test
+    public void canGetNightlyRate(){
+        assertEquals(50.50, bedroom1.getNightlyRate(), 0);
     }
 }
