@@ -1,6 +1,6 @@
 public class Booking {
-    Bedroom room;
-    int nights;
+    private Bedroom room;
+    private int nights;
 
     public Booking(Bedroom bedroom, int nights) {
         this.room = bedroom;

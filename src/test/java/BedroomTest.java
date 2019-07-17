@@ -15,8 +15,8 @@ public class BedroomTest {
     @Before
     public void setUp(){
         bedroom1 = new Bedroom(1, 2, "single", 50.50);
-        guest1 = new Guest("Reginald");
-        guest2 = new Guest("Ophelia");
+        guest1 = new Guest("Reginald", 30.20);
+        guest2 = new Guest("Ophelia", 60.50);
         guests = new ArrayList<Guest>();
         guests.add(guest1);
         guests.add(guest2);
